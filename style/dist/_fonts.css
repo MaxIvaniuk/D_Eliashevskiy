@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&display=swap");
+@font-face {
+  font-family: "NightStillComes";
+  src: url("./fonts/NightStillComes-Bold.eot");
+  src: url("./fonts/NightStillComes-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/NightStillComes-Bold.woff2") format("woff2"), url("./fonts/NightStillComes-Bold.woff") format("woff"), url("./fonts/NightStillComes-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00A3;
+}
+@font-face {
+  font-family: "NightStillComes";
+  src: url("./fonts/NightStillComes-Italic.eot");
+  src: url("./fonts/NightStillComes-Italic.eot?#iefix") format("embedded-opentype"), url("./fonts/NightStillComes-Italic.woff2") format("woff2"), url("./fonts/NightStillComes-Italic.woff") format("woff"), url("./fonts/NightStillComes-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-00A3;
+}
+@font-face {
+  font-family: "NightStillComes";
+  src: url("./fonts/NightStillComes.eot");
+  src: url("./fonts/NightStillComes.eot?#iefix") format("embedded-opentype"), url("./fonts/NightStillComes.woff2") format("woff2"), url("./fonts/NightStillComes.woff") format("woff"), url("./fonts/NightStillComes.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00A3;
+}
+@font-face {
+  font-family: "Stackyard";
+  src: url("./fonts/Stackyard PERSONAL USE.eot");
+  src: url("./fonts/Stackyard PERSONAL USE.eot?#iefix") format("embedded-opentype"), url("./fonts/Stackyard PERSONAL USE.woff2") format("woff2"), url("./fonts/Stackyard PERSONAL USE.woff") format("woff"), url("./fonts/Stackyard PERSONAL USE.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
