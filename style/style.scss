@@ -322,7 +322,7 @@ body {
       height: inherit;
       width: 100%;
       border: 3px solid #ccc;
-      z-index: -1;
+      z-index: -5;
     }
   }
 }
@@ -358,33 +358,70 @@ body {
     }
 
     &_item {
-      background-image: url(../../src/img/port_item1.jpg);
+      // background-image: url(../../src/img/port_item1.jpg);
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
+      transition: 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      .item__description {
+        color: #fff;
+        @include Montserrat;
+        opacity: 0.6;
+
+        &_header {
+          font-size: 30px;
+        }
+
+        &_text {
+          font-size: 14px;
+        }
+      }
+
+      &:hover {
+        background-color: linear-gradient(0deg, rgba(51,51,51,0.5) 0%, rgba(51,51,51,0.5) 100%);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .item__description {
+          opacity: 1;
+        }
+      }
+      
 
       &:nth-child(2) {
         grid-row: 1 / 5;
+        background-image: url(../../src/img/port_item1.jpg);
       }
       
       &:nth-child(3){
         grid-row: 3 / 7;
+        background-image: url(../../src/img/portfolio_item2.jpg)
       }
 
       &:nth-child(4) {
         grid-row: 2 / 6;
+        background-image: url(../../src/img/portfolio_item5.jpg)      
       }
 
       &:nth-child(5) {
         grid-row: 5 / 9;
+        background-image: url(../../src/img/portfolio_item4.jpg)      
       }
       
       &:nth-child(6) {
         grid-row: 6 / 10;
+        background-image: url(../../src/img/portfolio_item3.jpg)      
       }
 
       &:last-child {
         grid-row: 7 / 11;
+        background-image: url(../../src/img/portfolio_item6.jpg)      
       }
     }
   }
