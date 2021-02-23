@@ -33,3 +33,40 @@
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
 }
+
+@mixin inputTextStyles {
+    @include PlayfairDisplay;
+    color: #000;
+    font-size: 16px;
+}
+
+@mixin inputStyles {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none;
+    background: transparent;
+}
+
+@mixin inputIndents {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    width: calc(50% - 10px);
+}
+
+@mixin inputHover {
+    &:hover {
+        border-color: #000;
+      }
+}
+
+@mixin inputFocus {
+    transition: 0.1s;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+    transform: scale(1.02);
+    color: #000;
+}
