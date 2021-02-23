@@ -362,7 +362,7 @@ body {
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      transition: 0.2s;
+      // transition: 0.2s;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -383,7 +383,7 @@ body {
       }
 
       &:hover {
-        background-color: linear-gradient(0deg, rgba(51,51,51,0.5) 0%, rgba(51,51,51,0.5) 100%);
+        background-color: rgba(51,51,51,0.6) 0%;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -422,6 +422,195 @@ body {
       &:last-child {
         grid-row: 7 / 11;
         background-image: url(../../src/img/portfolio_item6.jpg)      
+      }
+    }
+  }
+}
+
+.contact {
+  margin-top: 160px;
+  margin-bottom: 160px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    grid-column-gap: 30px;
+    justify-items: stretch;
+    align-items: stretch;
+
+  }
+  &__heading {
+    @include PlayfairDisplay;
+    grid-column: 1/2;
+
+    &_header {
+      font-size: 40px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    &_text {
+      font-size: 16px;
+    }
+  }
+  // copied styles 
+
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: $white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+// end copied styles
+
+
+  &__form {
+    position: relative;
+    grid-column: 2/4;
+
+    .form {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+
+      &__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: #000;
+      }
+
+      &__name {
+        @include inputStyles;
+        @include inputIndents;
+        @include inputHover;
+        
+        margin-right: 20px;
+
+        &::placeholder {
+          color: transparent;
+        }
+      
+        &:placeholder-shown ~ .form__label {
+          font-size: 1.3rem;
+          cursor: text;
+          top: 20px;
+        }
+        
+        // &::placeholder {
+        //   @include inputTextStyles;
+        // }
+
+        &:focus {
+          // @include inputFocus;
+          ~ .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1rem;
+            color: $primary;
+            font-weight:700;    
+          }
+          padding-bottom: 6px;  
+          font-weight: 700;
+          border-width: 3px;
+          border-image: linear-gradient(to right, $primary,$secondary);
+          border-image-slice: 1;
+        }
+      }
+
+      &__email {
+        @include inputStyles;
+        @include inputIndents;
+        @include inputHover;
+        
+        &::placeholder {
+          @include inputTextStyles;
+        }
+
+        &:focus {
+          @include inputFocus;
+        }
+      }
+
+      &__message {
+        @include inputStyles;
+        @include inputHover;
+        width: 100%;
+        resize: none;
+        overflow: auto;
+
+        &::placeholder {
+          @include inputTextStyles;
+        }
+
+        &:focus {
+          @include inputFocus;
+        }
+      }
+
+      &__button {
+        @include btnStyle;
+        border-color: #000;
+        color: #000;
+        margin-top: 50px;
       }
     }
   }
