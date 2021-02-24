@@ -370,6 +370,7 @@ body {
 }
 .portfolio__container_header .portfolio__text {
   font-size: 16px;
+  color: #686868;
 }
 .portfolio__container_item {
   background-position: center center;
@@ -379,11 +380,17 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  transform-style: preserve-3d;
 }
 .portfolio__container_item .item__description {
-  color: #fff;
+  transform: translateZ(20px);
+  transition: 0.2s;
   font-family: "Montserrat", "Arial", sans-serif;
-  opacity: 0.6;
+  color: #ccc;
+  opacity: 0.9;
+  width: 100%;
+  padding: 15px 0;
+  background-color: rgba(204, 204, 204, 0.2);
 }
 .portfolio__container_item .item__description_header {
   font-size: 30px;
@@ -398,7 +405,9 @@ body {
   background-size: cover;
 }
 .portfolio__container_item:hover .item__description {
+  color: #fff;
   opacity: 1;
+  background-color: rgba(204, 204, 204, 0.5);
 }
 .portfolio__container_item:nth-child(2) {
   grid-row: 1/5;
@@ -428,7 +437,6 @@ body {
 .contact {
   margin-top: 160px;
   margin-bottom: 160px;
-  /* reset input */
 }
 .contact__container {
   display: grid;
@@ -449,53 +457,7 @@ body {
 }
 .contact__heading_text {
   font-size: 16px;
-}
-.contact .form__field {
-  font-family: inherit;
-  width: 100%;
-  border: 0;
-  border-bottom: 2px solid #9b9b9b;
-  outline: 0;
-  font-size: 1.3rem;
-  color: #fff;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-}
-.contact .form__field::placeholder {
-  color: transparent;
-}
-.contact .form__field:placeholder-shown ~ .form__label {
-  font-size: 1.3rem;
-  cursor: text;
-  top: 20px;
-}
-.contact .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #9b9b9b;
-}
-.contact .form__field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #11998e, #38ef7d);
-  border-image-slice: 1;
-}
-.contact .form__field:focus ~ .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #11998e;
-  font-weight: 700;
-}
-.contact .form__field:required, .contact .form__field:invalid {
-  box-shadow: none;
+  color: #686868;
 }
 .contact__form {
   position: relative;
@@ -506,14 +468,6 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-}
-.contact__form .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #000;
 }
 .contact__form .form__name {
   border: none;
@@ -532,28 +486,17 @@ body {
   border-color: #000;
 }
 .contact__form .form__name::placeholder {
-  color: transparent;
-}
-.contact__form .form__name:placeholder-shown ~ .form__label {
-  font-size: 1.3rem;
-  cursor: text;
-  top: 20px;
+  font-family: "Playfair Display", serif;
+  color: #000;
+  font-size: 16px;
 }
 .contact__form .form__name:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #11998e, #38ef7d);
-  border-image-slice: 1;
-}
-.contact__form .form__name:focus ~ .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #11998e;
-  font-weight: 700;
+  transition: 0.1s;
+  border: 1px solid #000;
+  border-radius: 5px;
+  outline: none;
+  transform: scale(1.02);
+  color: #000;
 }
 .contact__form .form__email {
   border: none;
@@ -627,6 +570,40 @@ body {
   border-color: #000;
   color: #000;
   margin-top: 50px;
+}
+
+.footer {
+  margin: 65px 0;
+}
+.footer__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 2px solid #d4d4d4;
+  padding-top: 35px;
+}
+.footer__copyright {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  color: #686868;
+}
+.footer__socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer__socials_item {
+  margin-right: 20px;
+}
+.footer__socials_item .item_link {
+  text-decoration: none;
+  color: #000;
+}
+.footer__socials_item .item_link:hover {
+  color: #686868;
+}
+.footer__socials_item .item_link:active {
+  color: #ccc;
 }
 
 @-webkit-keyframes scroll {
