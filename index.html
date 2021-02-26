@@ -163,22 +163,29 @@
                 </div>
                 <div class="contact__form">
                     <form class="form" action="" method="get">
-                        <input class="form__name" type="text" name="name" id="formName" placeholder="Your Name">
-                        <!-- <label for="formName" class="form__label">Your Name</label> -->
+
+                        <div class="form__name">
+                            <input type="text" class="form__name_input" placeholder="Your Name" name="name" id="formName" required />
+                            <label for="formName" class="form__name_label">Your Name</label> 
+                        </div>                       
                         
-                        <!-- <label for="formEmail">Your e-mail</label> -->
-                        <input class="form__email" type="email" name="email" id="formEmail" placeholder="Your e-mail">
+                        <div class="form__email">
+                            <input class="form__email_input" type="email" name="email" id="formEmail" placeholder="Your e-mail">
+                            <label for="formEmail" class="form__email_label">Your e-mail</label>
+                        </div>
+
                         <textarea class="form__message" name="message" id="" cols="20" rows="5" placeholder="Your message"></textarea>
                         <button class="form__button" type="submit">Send Now</button>
                     </form>
                 </div>
+
             </div>
         </section>
     </main>
     <footer class="footer">
         <div class="wrapper footer__container">
             <div class="footer__copyright">
-                <span>All Rights Reserved  &copy; Maksym Ivaniuk 2020</span>
+                <span>&copy; Maksym Ivaniuk 2020</span>
             </div>
             <div class="footer__socials">
                 <div class="footer__socials_item">

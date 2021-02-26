@@ -31,6 +31,11 @@ $('nav a').click(function (event) {
     scrollTop: target
   }, 500);
   event.preventDefault();
+}); // Tilt effect
+
+$('.portfolio__container_item').tilt({
+  scale: 1.1,
+  perspective: 500
 }); // contact button scroll
 
 $('contact_button').click(function (event) {

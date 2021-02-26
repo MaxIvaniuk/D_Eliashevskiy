@@ -403,6 +403,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 10;
 }
 .portfolio__container_item:hover .item__description {
   color: #fff;
@@ -460,7 +461,6 @@ body {
   color: #686868;
 }
 .contact__form {
-  position: relative;
   grid-column: 2/4;
 }
 .contact__form .form {
@@ -468,62 +468,117 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  transition: 0.2s;
 }
 .contact__form .form__name {
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  cursor: pointer;
-  box-shadow: none;
-  background: transparent;
-  margin-bottom: 30px;
-  padding-bottom: 10px;
-  padding-top: 5px;
-  width: calc(50% - 10px);
-  margin-right: 20px;
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 45%;
+  margin-right: 10%;
 }
-.contact__form .form__name:hover {
-  border-color: #000;
-}
-.contact__form .form__name::placeholder {
+.contact__form .form__name_input {
   font-family: "Playfair Display", serif;
   color: #000;
-  font-size: 16px;
+  font-size: 1rem;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: 0;
+  width: 100%;
+  padding: 5px 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }
-.contact__form .form__name:focus {
-  transition: 0.1s;
-  border: 1px solid #000;
-  border-radius: 5px;
-  outline: none;
-  transform: scale(1.02);
+.contact__form .form__name_input::placeholder {
+  color: transparent;
+}
+.contact__form .form__name_input:placeholder-shown ~ .form__name_label {
+  font-size: 1rem;
+  cursor: text;
+  top: 20px;
+}
+.contact__form .form__name_input:hover {
+  border-color: #000;
+}
+.contact__form .form__name_input:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-color: #000;
+}
+.contact__form .form__name_input:focus ~ .form__name_label {
+  font-family: "Playfair Display", serif;
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+  font-weight: 700;
+}
+.contact__form .form__name_input:required, .contact__form .form__name_input:invalid {
+  box-shadow: none;
+}
+.contact__form .form__name_label {
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
   color: #000;
 }
 .contact__form .form__email {
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  cursor: pointer;
-  box-shadow: none;
-  background: transparent;
-  margin-bottom: 30px;
-  padding-bottom: 10px;
-  padding-top: 5px;
-  width: calc(50% - 10px);
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 45%;
 }
-.contact__form .form__email:hover {
-  border-color: #000;
-}
-.contact__form .form__email::placeholder {
+.contact__form .form__email_input {
   font-family: "Playfair Display", serif;
   color: #000;
-  font-size: 16px;
+  font-size: 1rem;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: 0;
+  width: 100%;
+  padding: 5px 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }
-.contact__form .form__email:focus {
-  transition: 0.1s;
-  border: 1px solid #000;
-  border-radius: 5px;
-  outline: none;
-  transform: scale(1.02);
+.contact__form .form__email_input::placeholder {
+  color: transparent;
+}
+.contact__form .form__email_input:placeholder-shown ~ .form__email_label {
+  font-size: 1rem;
+  cursor: text;
+  top: 20px;
+}
+.contact__form .form__email_input:hover {
+  border-color: #000;
+}
+.contact__form .form__email_input:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image-slice: 1;
+  border-color: #000;
+}
+.contact__form .form__email_input:focus ~ .form__email_label {
+  font-family: "Playfair Display", serif;
+  position: absolute;
+  top: 0px;
+  display: block;
+  font-size: 1rem;
+  color: #9b9b9b;
+  font-weight: 700;
+}
+.contact__form .form__email_input:required, .contact__form .form__email_input:invalid {
+  box-shadow: none;
+}
+.contact__form .form__email_label {
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
   color: #000;
 }
 .contact__form .form__message {
@@ -536,6 +591,7 @@ body {
   width: 100%;
   resize: none;
   overflow: auto;
+  margin: 20px 0 0 0;
 }
 .contact__form .form__message:hover {
   border-color: #000;
@@ -543,7 +599,7 @@ body {
 .contact__form .form__message::placeholder {
   font-family: "Playfair Display", serif;
   color: #000;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .contact__form .form__message:focus {
   transition: 0.1s;
