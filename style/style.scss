@@ -359,11 +359,10 @@ body {
     }
 
     &_item {
-      // background-image: url(../../src/img/port_item1.jpg);
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      // transition: 0.2s;
+      
       display: flex;
       justify-content: center;
       align-items: center;
@@ -374,6 +373,7 @@ body {
       .item__description {
         transform: translateZ(20px);
         transition: 0.2s;
+
         @include Montserrat;
         color: #ccc;
         opacity: 0.9;
@@ -395,8 +395,10 @@ body {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
+        z-index: 10;
 
         .item__description {
+          
           color: #fff;
           opacity: 1;
           background-color: rgba(204, 204, 204, 0.5);
@@ -467,7 +469,7 @@ body {
   }
 
   &__form {
-    position: relative;
+    $gray: #9b9b9b;
     grid-column: 2/4;
 
     .form {
@@ -475,49 +477,131 @@ body {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-
-      // &__label {
-      //   position: absolute;
-      //   top: 0;
-      //   display: block;
-      //   transition: 0.2s;
-      //   font-size: 1rem;
-      //   color: #000;
-      // }
+      transition: 0.2s;
 
       &__name {
-        @include inputStyles;
-        @include inputIndents;
-        @include inputHover;
-        
-        margin-right: 20px;
+        position: relative;
+        padding: 15px 0 0;
+        margin-top: 10px;
+        width: 45%;
+        margin-right: 10%;
 
-        &::placeholder {
+        &_input {
           @include inputTextStyles;
+          border: 0;
+          border-bottom: 2px solid #ccc;
+          outline: 0;
+          width: 100%;
+          padding: 5px 0;
+          background: transparent;
+          transition: border-color 0.2s;
+
+          &::placeholder {
+            color: transparent;
+          }
+  
+          &:placeholder-shown ~ .form__name_label {
+            font-size: 1rem;
+            cursor: text;
+            top: 20px;
+          }
+
+          &:hover {
+            border-color: #000;
+          }
+  
+          &:focus {
+            padding-bottom: 6px;  
+            border-width: 3px;
+            border-color: #000;
+    
+            ~ .form__name_label {
+              @include PlayfairDisplay;
+              position: absolute;
+              top: 0px;
+              display: block;
+              transition: 0.2s;
+              font-size: 1rem;
+              color: $gray;
+              font-weight:700;    
+            }
+          }
+  
+          &:required,&:invalid { 
+            box-shadow:none; 
+          }
         }
-      
-        // &:placeholder-shown  {
-        //   font-size: 16px;
-        //   cursor: text;
 
-        // }
-
-        &:focus {
-          @include inputFocus;
+        &_label {
+          position: absolute;
+          top: 0px;
+          display: block;
+          transition: 0.2s;
+          font-size: 1rem;
+          color: #000;
         }
       }
-
+    
+      // EMAIL INPUT
       &__email {
-        @include inputStyles;
-        @include inputIndents;
-        @include inputHover;
-        
-        &::placeholder {
+        position: relative;
+        padding: 15px 0 0;
+        margin-top: 10px;
+        width: 45%;
+
+        &_input {
           @include inputTextStyles;
+          border: 0;
+          border-bottom: 2px solid #ccc;
+          outline: 0;
+          width: 100%;
+          padding: 5px 0;
+          background: transparent;
+          transition: border-color 0.2s;
+  
+          &::placeholder {
+            color: transparent;
+          }
+  
+          &:placeholder-shown ~ .form__email_label {
+            font-size: 1rem;
+            cursor: text;
+            top: 20px;
+          }
+
+          &:hover {
+            border-color: #000;
+          }
+  
+          &:focus {
+            padding-bottom: 6px;  
+            border-width: 3px;
+            border-image-slice: 1;
+            border-color: #000;
+    
+            ~ .form__email_label {
+              @include PlayfairDisplay;
+              position: absolute;
+              top: 0px;
+              display: block;
+              font-size: 1rem;
+              color: $gray;
+              font-weight:700;     
+            }
+          }
+  
+          &:required,&:invalid { 
+            box-shadow:none; 
+          }
         }
 
-        &:focus {
-          @include inputFocus;
+        &_label {
+          position: absolute;
+          top: 0px;
+          display: block;
+          transition: 0.2s;
+          font-size: 1rem;
+          color: #000;
         }
       }
 
@@ -527,6 +611,7 @@ body {
         width: 100%;
         resize: none;
         overflow: auto;
+        margin: 20px 0 0 0;
 
         &::placeholder {
           @include inputTextStyles;
