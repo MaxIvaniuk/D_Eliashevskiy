@@ -11,6 +11,10 @@
 $grey: #8f8f8f;
 $color2: #e8f380;
 
+*{
+  transition: all 0.2s;
+}
+
 body {
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
@@ -330,6 +334,7 @@ body {
 // Portfolio section
 
 .portfolio {
+  position: relative;
   margin-top: 130px;
   margin-bottom: 80px;
 
@@ -439,6 +444,7 @@ body {
   }
 }
 
+// CONTACT section
 .contact {
   margin-top: 160px;
   margin-bottom: 160px;
@@ -467,7 +473,6 @@ body {
       color: #686868;
     }
   }
-
   &__form {
     $gray: #9b9b9b;
     grid-column: 2/4;
@@ -512,7 +517,6 @@ body {
   
           &:focus {
             padding-bottom: 6px;  
-            border-width: 3px;
             border-color: #000;
     
             ~ .form__name_label {
@@ -575,7 +579,6 @@ body {
   
           &:focus {
             padding-bottom: 6px;  
-            border-width: 3px;
             border-image-slice: 1;
             border-color: #000;
     
@@ -606,19 +609,62 @@ body {
       }
 
       &__message {
-        @include inputStyles;
-        @include inputHover;
         width: 100%;
-        resize: none;
-        overflow: auto;
-        margin: 20px 0 0 0;
+        margin-top: 20px;
+        background: transparent;
+        position: relative;
 
-        &::placeholder {
+        &_textarea {
           @include inputTextStyles;
+          border: 0;
+          border-bottom: 2px solid #ccc;
+          outline: 0;
+          padding: 5px 0;
+          background: transparent;
+          transition: border-color 0.2s;
+          width: 100%;
+          resize: none;
+          overflow: auto;
+          margin: 20px 0 0 0;
+  
+          &::placeholder {
+            color: transparent;
+          }
+  
+          &:placeholder-shown ~ .form__email_label {
+            font-size: 1rem;
+            cursor: text;
+            top: 20px;
+          }
+
+          &:hover {
+            border-color: #000;
+          }
+  
+          &:focus {
+            padding-bottom: 6px;  
+            border-image-slice: 1;
+            border-color: #000;
+    
+            ~ .form__email_label {
+              @include PlayfairDisplay;
+              position: absolute;
+              top: 0px;
+              display: block;
+              font-size: 1rem;
+              color: $gray;
+              font-weight:700;     
+            }
+          }
         }
 
-        &:focus {
-          @include inputFocus;
+        &_label {
+          position: absolute;
+          top: 0px;
+          display: block;
+          transition: 0.2s;
+          font-size: 1rem;
+          color: #000;
         }
       }
 
@@ -703,3 +749,26 @@ body {
       transform: translateY(20px);
     }
   }
+
+.splide {
+  display: none;
+  width: 90%;;
+  height: 80vh;
+  margin: 0 auto;
+  position: fixed !important; 
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 999;
+}
+  .splide__list_img {
+    width : auto;
+	  height: 70vh;
+  }
+
+.splide__close {
+  width: 100px;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+}

@@ -2,10 +2,13 @@
 
 // Slider
 $(document).ready(function () {
-  $('.splide__list').slick({
-    autoplay: true,
-    autoplaySpeed: 2000
-  });
+  new Splide('.splide', {
+    type: 'loop',
+    height: '70vh',
+    autoWidth: true,
+    rewind: true,
+    focus: 'center'
+  }).mount();
 }); // Sticky Header
 
 $(window).scroll(function () {

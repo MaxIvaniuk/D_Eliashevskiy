@@ -1,3 +1,14 @@
+// Slider
+$(document).ready(function(){
+    new Splide( '.splide', {
+        type     : 'loop',
+        height   : '70vh',
+        autoWidth: true,
+        rewind   : true,
+        focus    : 'center',
+    } ).mount();
+});
+
 // Sticky Header
 $(window).scroll(function() {
     if ($(window).scrollTop() > 100) {
@@ -23,7 +34,7 @@ $('.header li a').click(function() {
     }
 });
 
-// Navigation Scroll - ljepo radi materem
+// Navigation Scroll
 $('nav a').click(function(event) {
     let id = $(this).attr("href");
     let offset = 70;
