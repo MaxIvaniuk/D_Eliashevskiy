@@ -35,6 +35,10 @@
   font-stretch: normal;
   unicode-range: U+0020-00FE;
 }
+* {
+  transition: all 0.2s;
+}
+
 body {
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
@@ -347,6 +351,7 @@ body {
 }
 
 .portfolio {
+  position: relative;
   margin-top: 130px;
   margin-bottom: 80px;
 }
@@ -502,7 +507,6 @@ body {
 }
 .contact__form .form__name_input:focus {
   padding-bottom: 6px;
-  border-width: 3px;
   border-color: #000;
 }
 .contact__form .form__name_input:focus ~ .form__name_label {
@@ -557,7 +561,6 @@ body {
 }
 .contact__form .form__email_input:focus {
   padding-bottom: 6px;
-  border-width: 3px;
   border-image-slice: 1;
   border-color: #000;
 }
@@ -582,31 +585,57 @@ body {
   color: #000;
 }
 .contact__form .form__message {
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  cursor: pointer;
-  box-shadow: none;
+  width: 100%;
+  margin-top: 20px;
   background: transparent;
+  position: relative;
+}
+.contact__form .form__message_textarea {
+  font-family: "Playfair Display", serif;
+  color: #000;
+  font-size: 1rem;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  outline: 0;
+  padding: 5px 0;
+  background: transparent;
+  transition: border-color 0.2s;
   width: 100%;
   resize: none;
   overflow: auto;
   margin: 20px 0 0 0;
 }
-.contact__form .form__message:hover {
+.contact__form .form__message_textarea::placeholder {
+  color: transparent;
+}
+.contact__form .form__message_textarea:placeholder-shown ~ .form__email_label {
+  font-size: 1rem;
+  cursor: text;
+  top: 20px;
+}
+.contact__form .form__message_textarea:hover {
   border-color: #000;
 }
-.contact__form .form__message::placeholder {
-  font-family: "Playfair Display", serif;
-  color: #000;
-  font-size: 1rem;
+.contact__form .form__message_textarea:focus {
+  padding-bottom: 6px;
+  border-image-slice: 1;
+  border-color: #000;
 }
-.contact__form .form__message:focus {
-  transition: 0.1s;
-  border: 1px solid #000;
-  border-radius: 5px;
-  outline: none;
-  transform: scale(1.02);
+.contact__form .form__message_textarea:focus ~ .form__email_label {
+  font-family: "Playfair Display", serif;
+  position: absolute;
+  top: 0px;
+  display: block;
+  font-size: 1rem;
+  color: #9b9b9b;
+  font-weight: 700;
+}
+.contact__form .form__message_label {
+  position: absolute;
+  top: 0px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
   color: #000;
 }
 .contact__form .form__button {
@@ -687,4 +716,27 @@ body {
     -ms-transform: translateY(20px);
     transform: translateY(20px);
   }
+}
+.splide {
+  display: none;
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.splide__list_img {
+  width: auto;
+  height: 70vh;
+}
+
+.splide__close {
+  width: 100px;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
 }
