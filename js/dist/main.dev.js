@@ -4,10 +4,11 @@
 $(document).ready(function () {
   new Splide('.splide', {
     type: 'loop',
-    height: '70vh',
     autoWidth: true,
     rewind: true,
-    focus: 'center'
+    focus: 'center',
+    width: '100vw',
+    height: '100vh'
   }).mount();
 }); // Sticky Header
 

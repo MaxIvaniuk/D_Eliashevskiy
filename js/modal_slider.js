@@ -1,47 +1,32 @@
-// function modalWindow(){
-//     let div = document.querySelector('#modal');
-    
-//     let openBtn = document.createElement('button');
-//     let window = document.createElement('div');
-//     let closeBtn = document.createElement('button');
-    
-//     openBtn.innerHTML = 'Open';
-//     window.innerHTML = 'MODAL WINDOW';
-//     closeBtn.innerHTML = 'Close';
-//     window.style.display = 'none';
-    
-//     div.append(openBtn);
-//     div.append(window);
-//     window.append(closeBtn);
-    
-//     openBtn.onclick = () => window.style.display = 'block';
-//     closeBtn.onclick = ()=> window.style.display = 'none';
-//   };
-  
-//   modalWindow();
-
-let container = document.querySelector('#slider_list'); // контейнер слайдера
-
-let closeBtn = document.querySelector('#slider__close'); // кнопка яка буде закривати слайдер
-let sliderWindow = document.querySelector('#slider'); // блок слайдера
+let container = document.querySelector('#slider_list');
+let closeBtn = document.querySelector('#slider__close'); 
+let sliderWindow = document.querySelector('#slider'); 
 let bodyTag = document.querySelector('body');
 let header = document.querySelector('.header');
 
 let selectedItem;
 
-portfolioWrapper.onclick = function (event) {  // Event delegation
+portfolioWrapper.onclick = function (event) {
     let target = event.target;
-    if ( target.className != 'portfolio__container_item' ) return;
+    if ( target.className == 'portfolio__container_item' || target.className == 'item__description' ) return;
     console.log(target.id);
     showSlider();
+}
+
+function showSlider() {
+    sliderWindow.style.display = 'block';
+    header.style.display = 'none';
+    bodyTag.style.backgroundColor = 'rgba(0,0,0,0.9)';
 }
 
 closeBtn.onclick = () => {
     sliderWindow.style.display = 'none';
     header.style.display = 'block';
+    bodyTag.style.backgroundColor = '#fff';
 };
 
-function showSlider() {
-    sliderWindow.style.display = 'block';
-    header.style.display = 'none';
-}
+// Google Maps
+map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+});
