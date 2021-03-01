@@ -20,6 +20,7 @@
     @include Montserrat;
     text-transform: uppercase;
     color: #fff;
+    font-weight: 300;
     font-size: 18px;
 
     padding: 15px 40px;
@@ -35,7 +36,7 @@
 }
 
 @mixin inputTextStyles {
-    @include PlayfairDisplay;
+    @include Montserrat;
     color: #000;
     font-size: 1rem;
 }
@@ -54,19 +55,4 @@
     padding-bottom: 10px;
     padding-top: 5px;
     width: calc(50% - 10px);
-}
-
-@mixin inputHover {
-    &:hover {
-        border-color: #000;
-      }
-}
-
-@mixin inputFocus {
-    transition: 0.1s;
-    border: 1px solid #000;
-    border-radius: 5px;
-    outline: none;
-    transform: scale(1.02);
-    color: #000;
 }

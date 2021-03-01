@@ -36,7 +36,7 @@
   unicode-range: U+0020-00FE;
 }
 * {
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 
 body {
@@ -224,10 +224,11 @@ body {
   font-size: 20px;
   line-height: 20px;
 }
-.hero .contact_button {
+.hero .header_button {
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase;
   color: #fff;
+  font-weight: 300;
   font-size: 18px;
   padding: 15px 40px;
   margin-top: 40px;
@@ -238,15 +239,34 @@ body {
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
 }
-.hero .contact_button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid #fff;
-  transform: scale(1.1);
-  transition: 0.3s;
+.hero .header_button:before {
+  content: "";
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+  height: 60px;
+  width: 50px;
+  position: absolute;
+  top: 0px;
+  left: -150px;
+  transform: skewX(-45deg);
 }
-.hero .contact_button:active {
-  background-color: rgba(255, 255, 255, 0.5);
+.hero .header_button:hover {
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  color: #000;
+  border-color: #000;
+}
+.hero .header_button:hover:before {
+  left: 220px;
+  transition: 0.5s ease-in-out;
+}
+.hero .header_button:active {
+  border-left-width: 3px;
+  border-right-width: 3px;
 }
 
 .scroll {
@@ -314,10 +334,11 @@ body {
   line-height: 20px;
   color: #969696;
 }
-.about__descr .descr__button {
+.about__descr .descr_button {
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase;
   color: #fff;
+  font-weight: 300;
   font-size: 18px;
   padding: 15px 40px;
   margin-top: 40px;
@@ -330,6 +351,34 @@ body {
   -moz-border-radius: 50px;
   border-color: #000;
   color: #000;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+.about__descr .descr_button:before {
+  content: "";
+  background: linear-gradient(90deg, rgba(136, 136, 136, 0.1), rgba(136, 136, 136, 0.5));
+  height: 60px;
+  width: 50px;
+  position: absolute;
+  top: 0px;
+  left: -150px;
+  transform: skewX(-45deg);
+}
+.about__descr .descr_button:hover {
+  font-weight: 500;
+  background: rgba(136, 136, 136, 0.2);
+  color: #000;
+  border-color: #000;
+}
+.about__descr .descr_button:hover:before {
+  left: 220px;
+  transition: 0.5s ease-in-out;
+}
+.about__descr .descr_button:active {
+  border-left-width: 3px;
+  border-right-width: 3px;
 }
 .about__image {
   position: relative;
@@ -474,6 +523,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr;
   grid-column-gap: 30px;
+  grid-row-gap: 50px;
   justify-items: stretch;
   align-items: stretch;
 }
@@ -491,6 +541,7 @@ body {
   color: #686868;
 }
 .contact__form {
+  font-family: "Montserrat", "Arial", sans-serif;
   grid-column: 2/4;
 }
 .contact__form .form {
@@ -508,7 +559,7 @@ body {
   margin-right: 10%;
 }
 .contact__form .form__name_input {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   color: #000;
   font-size: 1rem;
   border: 0;
@@ -535,7 +586,6 @@ body {
   border-color: #000;
 }
 .contact__form .form__name_input:focus ~ .form__name_label {
-  font-family: "Playfair Display", serif;
   position: absolute;
   top: 0px;
   display: block;
@@ -562,7 +612,7 @@ body {
   width: 45%;
 }
 .contact__form .form__email_input {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   color: #000;
   font-size: 1rem;
   border: 0;
@@ -590,7 +640,6 @@ body {
   border-color: #000;
 }
 .contact__form .form__email_input:focus ~ .form__email_label {
-  font-family: "Playfair Display", serif;
   position: absolute;
   top: 0px;
   display: block;
@@ -610,13 +659,13 @@ body {
   color: #000;
 }
 .contact__form .form__message {
-  width: 100%;
-  margin-top: 20px;
-  background: transparent;
   position: relative;
+  padding: 15px 0 0;
+  margin-top: 20px;
+  width: 100%;
 }
 .contact__form .form__message_textarea {
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", "Arial", sans-serif;
   color: #000;
   font-size: 1rem;
   border: 0;
@@ -628,15 +677,14 @@ body {
   width: 100%;
   resize: none;
   overflow: auto;
-  margin: 20px 0 0 0;
 }
 .contact__form .form__message_textarea::placeholder {
   color: transparent;
 }
-.contact__form .form__message_textarea:placeholder-shown ~ .form__email_label {
+.contact__form .form__message_textarea:placeholder-shown ~ .form__message_label {
   font-size: 1rem;
   cursor: text;
-  top: 20px;
+  top: 0px;
 }
 .contact__form .form__message_textarea:hover {
   border-color: #000;
@@ -646,14 +694,16 @@ body {
   border-image-slice: 1;
   border-color: #000;
 }
-.contact__form .form__message_textarea:focus ~ .form__email_label {
-  font-family: "Playfair Display", serif;
+.contact__form .form__message_textarea:focus ~ .form__message_label {
   position: absolute;
   top: 0px;
   display: block;
   font-size: 1rem;
   color: #9b9b9b;
   font-weight: 700;
+}
+.contact__form .form__message_textarea:required, .contact__form .form__message_textarea:invalid {
+  box-shadow: none;
 }
 .contact__form .form__message_label {
   position: absolute;
@@ -663,10 +713,14 @@ body {
   font-size: 1rem;
   color: #000;
 }
+.contact__form .form__message:required, .contact__form .form__message:invalid {
+  box-shadow: none;
+}
 .contact__form .form__button {
   font-family: "Montserrat", "Arial", sans-serif;
   text-transform: uppercase;
   color: #fff;
+  font-weight: 300;
   font-size: 18px;
   padding: 15px 40px;
   margin-top: 40px;
@@ -679,11 +733,12 @@ body {
   -moz-border-radius: 50px;
   border-color: #000;
   color: #000;
-  margin-top: 50px;
+  margin: 20px 0;
 }
 .contact__map {
-  height: 50vh;
+  height: 70vh;
   width: 100%;
+  grid-column: 1/4;
 }
 
 .footer {
@@ -718,31 +773,4 @@ body {
 }
 .footer__socials_item .item_link:active {
   color: #ccc;
-}
-
-@-webkit-keyframes scroll {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-}
-@keyframes scroll {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    transform: translateY(20px);
-  }
 }
