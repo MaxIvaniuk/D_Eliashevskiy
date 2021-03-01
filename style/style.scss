@@ -12,7 +12,7 @@ $grey: #8f8f8f;
 $color2: #e8f380;
 
 *{
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 
 body {
@@ -83,7 +83,6 @@ body {
 }
 
 // Nav list
-
 .nav {
     float: right;
     width: 60%;
@@ -213,19 +212,38 @@ body {
         }
     }
 
-    .contact_button {
+    .header_button {
       @include btnStyle;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      transition: .2s ease-in-out;
 
-        &:hover {
-          background-color: rgba(255,255,255,0.2);
-          border: 2px solid #fff;
-          transform: scale(1.1);
-          transition: 0.3s;
-        }
+      &:before {
+        content: "";
+        background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+        height: 60px;
+        width: 50px;
+        position: absolute;
+        top: 0px;
+        left: -150px;
+        transform: skewX(-45deg);
+      }
 
-        &:active {
-          background-color: rgba(255,255,255,0.5);
-        }
+      &:hover {
+        font-weight: 500;
+        background: rgba(255, 255, 255, .2);
+        color: #000;
+        border-color: #000;
+      }
+      &:hover:before {
+        left: 220px;
+        transition: .5s ease-in-out;
+      }
+      &:active {
+        border-left-width: 3px;
+        border-right-width: 3px;
+      }
     }
   }
   
@@ -303,10 +321,40 @@ body {
       color: #969696;
     }
 
-    .descr__button {
+    .descr_button {
       @include btnStyle;
       border-color: #000;
       color: #000;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      transition: .2s ease-in-out;
+
+      &:before {
+        content: "";
+        background: linear-gradient(90deg, rgba(136, 136, 136, .1), rgba(136, 136, 136, .5));
+        height: 60px;
+        width: 50px;
+        position: absolute;
+        top: 0px;
+        left: -150px;
+        transform: skewX(-45deg);
+      }
+
+      &:hover {
+        font-weight: 500;
+        background: rgba(136, 136, 136, .2);
+        color: #000;
+        border-color: #000;
+      }
+      &:hover:before {
+        left: 220px;
+        transition: .5s ease-in-out;
+      }
+      &:active {
+        border-left-width: 3px;
+        border-right-width: 3px;
+      }
     }
   }
 
@@ -488,6 +536,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 2fr;
     grid-column-gap: 30px;
+    grid-row-gap: 50px;
     justify-items: stretch;
     align-items: stretch;
 
@@ -508,6 +557,7 @@ body {
     }
   }
   &__form {
+    @include Montserrat;
     $gray: #9b9b9b;
     grid-column: 2/4;
 
@@ -554,7 +604,6 @@ body {
             border-color: #000;
     
             ~ .form__name_label {
-              @include PlayfairDisplay;
               position: absolute;
               top: 0px;
               display: block;
@@ -617,7 +666,6 @@ body {
             border-color: #000;
     
             ~ .form__email_label {
-              @include PlayfairDisplay;
               position: absolute;
               top: 0px;
               display: block;
@@ -643,10 +691,13 @@ body {
       }
 
       &__message {
-        width: 100%;
-        margin-top: 20px;
-        background: transparent;
         position: relative;
+        padding: 15px 0 0;
+        margin-top: 20px;
+        width: 100%;
+        
+        // background: transparent;
+        
 
         &_textarea {
           @include inputTextStyles;
@@ -659,16 +710,15 @@ body {
           width: 100%;
           resize: none;
           overflow: auto;
-          margin: 20px 0 0 0;
   
           &::placeholder {
             color: transparent;
           }
   
-          &:placeholder-shown ~ .form__email_label {
+          &:placeholder-shown ~ .form__message_label {
             font-size: 1rem;
             cursor: text;
-            top: 20px;
+            top: 0px;
           }
 
           &:hover {
@@ -680,8 +730,7 @@ body {
             border-image-slice: 1;
             border-color: #000;
     
-            ~ .form__email_label {
-              @include PlayfairDisplay;
+            ~ .form__message_label {
               position: absolute;
               top: 0px;
               display: block;
@@ -689,6 +738,9 @@ body {
               color: $gray;
               font-weight:700;     
             }
+          }
+          &:required,&:invalid { 
+            box-shadow:none; 
           }
         }
 
@@ -700,20 +752,25 @@ body {
           font-size: 1rem;
           color: #000;
         }
+
+        &:required,&:invalid { 
+          box-shadow:none; 
+        }
       }
 
       &__button {
         @include btnStyle;
         border-color: #000;
         color: #000;
-        margin-top: 50px;
+        margin: 20px 0;
       }
     }
   }
 
   &__map {
-    height: 50vh;
+    height: 70vh;
     width: 100%;
+    grid-column: 1/4;
   }
 }
 
@@ -760,32 +817,32 @@ body {
 
 }
   
-  @-webkit-keyframes scroll {
-    0% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      -webkit-transform: translateY(20px);
-      transform: translateY(20px);
-    }
-  }
+  // @-webkit-keyframes scroll {
+  //   0% {
+  //     opacity: 1;
+  //     -webkit-transform: translateY(0);
+  //     transform: translateY(0);
+  //   }
+  //   100% {
+  //     opacity: 0;
+  //     -webkit-transform: translateY(20px);
+  //     transform: translateY(20px);
+  //   }
+  // }
   
   
-  @keyframes scroll {
-    0% {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      -webkit-transform: translateY(20px);
-      -ms-transform: translateY(20px);
-      transform: translateY(20px);
-    }
-  }
+  // @keyframes scroll {
+  //   0% {
+  //     opacity: 1;
+  //     -webkit-transform: translateY(0);
+  //     -ms-transform: translateY(0);
+  //     transform: translateY(0);
+  //   }
+  //   100% {
+  //     opacity: 0;
+  //     -webkit-transform: translateY(20px);
+  //     -ms-transform: translateY(20px);
+  //     transform: translateY(20px);
+  //   }
+  // }
 
