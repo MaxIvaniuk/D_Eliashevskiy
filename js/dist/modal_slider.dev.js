@@ -54,7 +54,7 @@ portfolioWrapper.onclick = function (event) {
 };
 
 function showSlider() {
-  sliderWindow.style.display = 'block';
+  sliderWindow.style.display = 'flex';
   header.style.display = 'none';
   bodyTag.style.backgroundColor = 'rgba(0,0,0,0.9)';
 }
@@ -67,7 +67,8 @@ function sliderInit() {
     focus: 'center',
     width: '100vw',
     height: '100vh',
-    pagination: false
+    pagination: false,
+    trimSpace: false
   }).mount();
 } // Close button
 
@@ -81,8 +82,7 @@ closeBtn.onclick = function () {
 };
 
 var sliderWindow = document.querySelector('#slider');
-var sliderContainer = document.querySelector('#slider_list'); // let sliderPagination = document.querySelector('.splide__pagination');
-
+var sliderContainer = document.querySelector('#slider_list');
 var sliderItem;
 
 function createSliders(arr) {
