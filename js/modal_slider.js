@@ -57,7 +57,7 @@ portfolioWrapper.onclick = function (event) {
 }
 
 function showSlider() {
-    sliderWindow.style.display = 'block';
+    sliderWindow.style.display = 'flex';
     header.style.display = 'none';
     bodyTag.style.backgroundColor = 'rgba(0,0,0,0.9)';
 }
@@ -71,6 +71,7 @@ function sliderInit() {
         width : '100vw',
 		height: '100vh',
         pagination: false,
+        trimSpace: false,
     } ).mount();
 }
 
@@ -85,7 +86,6 @@ closeBtn.onclick = () => {
 
 let sliderWindow = document.querySelector('#slider'); 
 let sliderContainer = document.querySelector('#slider_list');
-// let sliderPagination = document.querySelector('.splide__pagination');
 let sliderItem;
 
 function createSliders(arr) {

@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-
 </head>
 <body>
     <header class="header">
@@ -56,18 +54,18 @@
                 <span class="heading__descr">Photo and video creator</span>
     
                 <div class="button_wrapper">
-                    <button class="header_button">Contact me</button>
+                    <a href=".contact-form" class="header_button scrollBtn">Contact me</a>
                 </div>
             </div>
     
             <div class="scroll">
-                <a href="#main">
+                <a href="#about">
                     <i class="fas fa-chevron-down scroll__icon animate__fadeOutDown"></i>
                 </a>
             </div>       
         </section>
 
-        <section class="about">
+        <section class="about" id="about">
             <div class="wrapper">
                 <div class="about__container">
                     <div class="about__descr">
@@ -79,7 +77,7 @@
                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
                             mollit anim id est laborum. 
                         </p>
-                        <button class="descr_button">View Works</button>
+                        <a href=".portfolio" class="descr_button scrollBtn">View Works</a>
                     </div>
                     <div class="about__image">
                     </div>
@@ -87,7 +85,7 @@
             </div>
         </section>
 
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
             <div class="wrapper">
                 <div class="portfolio__container" id="portfolioWrapper">
                     <div class="portfolio__container_header">
@@ -138,7 +136,7 @@
                 </div>
                 <!-- Slider -->
                 <div class="splide" id="slider">
-                    <button class="splide__close" id="slider__close">Close</button>
+                    <div class="splide__close" id="slider__close"><i class="splide__close_icon fas fa-times"></i></div>
                     <div class="splide__track">
                         <ul class="splide__list" id="slider_list">
                         </ul>
@@ -163,15 +161,15 @@
                     </p>
                 </div>
                 <div class="contact__form">
-                    <form class="form" method="post" action="https://app.form2chat.io/f/2f2f414">
-
+                    <form class="form" id="contact-form" method="POST" action="https://app.form2chat.io/f/2f2f414">
+                        
                         <div class="form__name">
-                            <input type="text" class="form__name_input" placeholder="Your Name" name="name" id="formName" required />
+                            <input type="text" class="form__name_input" placeholder="Your Name" name="userName" id="formName" required />
                             <label for="formName" class="form__name_label">Your Name</label> 
                         </div>                       
                         
                         <div class="form__email">
-                            <input class="form__email_input" type="email" name="email" id="formEmail" placeholder="Your e-mail" required />
+                            <input class="form__email_input" type="email" name="userEmail" id="formEmail" placeholder="Your e-mail" required />
                             <label for="formEmail" class="form__email_label">Your e-mail</label>
                         </div>
 
@@ -179,8 +177,15 @@
                             <textarea class="form__message_textarea" name="message" id="message" cols="20" rows="5" placeholder="Your message" required></textarea>
                             <label for="message" class="form__message_label">Your message</label>
                         </div>
-                        <button class="form__button" type="submit">Send Now</button>
+                        <button class="form__button " id="form-button" type="submit">Send Now</button>
+
+                        <div class="form__gratitude" id="gratitude">
+                            <p class="form__gratitude_text">
+                                Thank you for the contact I will answer you soon
+                            </p>
+                        </div>
                     </form>
+                    
                 </div>
                 <div class="contact__map" id="map"></div>
 
@@ -225,7 +230,8 @@
     <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/897451f4d4.js" crossorigin="anonymous"></script>
     <script src="./js/modal_slider.js"></script>
-    <script src="./js/tg_request.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/g-maps.js"></script>
     <script src="./js/main.js"></script>
     
 	
