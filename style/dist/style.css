@@ -968,6 +968,10 @@ body {
   border: 1px solid #000;
   transition: border-radius linear 0.05s, width linear 0.05s;
 }
+.contact__form .form__button:hover {
+  font-weight: 500;
+  transition: 0.2s;
+}
 .contact__form .form__button:focus {
   outline: 2px;
 }

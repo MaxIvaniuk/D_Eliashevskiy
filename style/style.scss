@@ -973,8 +973,13 @@ body {
         -webkit-appearance: none;
         border: 1px solid #000;
         transition: border-radius linear 0.05s, width linear 0.05s;
+        
+        &:hover {
+          font-weight: 500;
+          transition: 0.2s;
+        }
 
-        &:focus{
+        &:focus {
           outline: 2px;
         }
         
