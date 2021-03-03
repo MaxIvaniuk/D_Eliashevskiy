@@ -5,6 +5,7 @@ $grey: #8f8f8f;
 
 *{
   transition: all 0.1s;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1187,7 +1188,7 @@ body {
         text-decoration: none;
         color: #000;
 
-        &:hover {
+        &:hover .socials_icon {
           color: #045065;
           transform: scale(1.2);
         }
