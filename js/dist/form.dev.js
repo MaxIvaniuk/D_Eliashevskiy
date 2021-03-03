@@ -27,7 +27,7 @@ form.onsubmit = function (e) {
   xhr.send(formData);
   setTimeout(function () {
     form.reset();
-  }, 4000);
+  }, 3500);
 };
 
 var showGratitude = function showGratitude() {
@@ -45,7 +45,6 @@ function animateSuccess() {
   formButtonId.classList.remove('animate');
   formButtonId.classList.add('animate');
   formButtonId.classList.add('success');
-  formButtonId.classList.add('animate');
   setTimeout(function () {
     formButtonId.classList.remove('animate');
   }, 4000);
@@ -54,7 +53,7 @@ function animateSuccess() {
 ;
 
 for (var i = 0; i < formButton.length; i++) {
-  formButton[i].addEventListener('click', animateSuccess, false);
+  formButton[i].addEventListener('submit', animateSuccess, false);
 }
 
 ;
@@ -67,10 +66,6 @@ function animateError() {
   setTimeout(function () {
     formButtonId.classList.remove('animate');
   }, 6000);
-
-  for (var _i = 0; _i < formButton.length; _i++) {
-    formButton[_i].addEventListener('click', animateError, false);
-  }
 }
 
 ;

@@ -30,7 +30,7 @@ form.onsubmit = function(e) {
   xhr.send(formData);
   setTimeout(function(){
     form.reset();
-  },4000);
+  },3500);
 };
 
 let showGratitude = () => {
@@ -44,16 +44,14 @@ function animateSuccess() {
     formButtonId.classList.remove('animate');
     formButtonId.classList.add('animate');
     formButtonId.classList.add('success');
-
     
-    formButtonId.classList.add('animate');
     setTimeout(function(){
       formButtonId.classList.remove('animate');
     },4000);
 };
 
 for (let i = 0; i < formButton.length; i++) {
-    formButton[i].addEventListener('click', animateSuccess, false);
+    formButton[i].addEventListener('submit', animateSuccess, false);
 };
 
 function animateError() {
@@ -66,8 +64,4 @@ function animateError() {
     setTimeout(function(){
       formButtonId.classList.remove('animate');
     },6000);
-
-    for (let i = 0; i < formButton.length; i++) {
-        formButton[i].addEventListener('click', animateError, false);
-    }
 };
