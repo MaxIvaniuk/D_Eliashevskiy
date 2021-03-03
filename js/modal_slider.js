@@ -3,6 +3,9 @@
 const closeBtn = document.querySelector('#slider__close'); 
 const bodyTag = document.querySelector('body');
 const header = document.querySelector('.header');
+const sliderWindow = document.querySelector('#slider'); 
+const sliderContainer = document.querySelector('#slider_list');
+let sliderItem;
 
 let currentArr = [];
 
@@ -15,8 +18,7 @@ let sliderImages = {
     mountains: ['mount1.jpg', 'mount2.jpg', 'mount3.jpg', 'mount4.jpg', 'mount5.jpg'],
 }
 
-// Event delegation
-portfolioWrapper.onclick = function (event) {
+portfolioWrapper.onclick = function(event) {
     let target = event.target;
     if ( target.className != 'item__description_header' ) return;
     
@@ -48,18 +50,11 @@ portfolioWrapper.onclick = function (event) {
         default:
             currentArr = [];
     }
-
     createSliders(currentArr);
     sliderInit();
     showSlider();
     console.log(currentArr);
     console.log(target.id);
-}
-
-function showSlider() {
-    sliderWindow.style.display = 'flex';
-    header.style.display = 'none';
-    bodyTag.style.backgroundColor = 'rgba(0,0,0,0.9)';
 }
 
 function sliderInit() {
@@ -75,21 +70,13 @@ function sliderInit() {
     } ).mount();
 }
 
-// Close button
-closeBtn.onclick = () => {
-    sliderWindow.style.display = 'none';
-    header.style.display = 'block';
-    bodyTag.style.backgroundColor = '#fff';
-    removeSlider();
-    console.log(currentArr);
-};
-
-const sliderWindow = document.querySelector('#slider'); 
-const sliderContainer = document.querySelector('#slider_list');
-let sliderItem;
+function showSlider() {
+    sliderWindow.style.display = 'flex';
+    header.style.display = 'none';
+    bodyTag.style.backgroundColor = 'rgba(0,0,0,0.9)';
+}
 
 function createSliders(arr) {
-
     for(let item of arr) {
         sliderItem = document.createElement('li');
         let sliderBody = document.createElement('div');
@@ -107,6 +94,15 @@ function removeSlider() {
     while (sliderContainer.firstChild) {
         sliderContainer.removeChild(sliderContainer.firstChild);
     }
-    // sliderWindow.removeChild(sliderPagination);
 }
+
+closeBtn.onclick = () => {
+    sliderWindow.style.display = 'none';
+    header.style.display = 'block';
+    bodyTag.style.backgroundColor = '#fff';
+    removeSlider();
+    console.log(currentArr);
+};
+
+
 

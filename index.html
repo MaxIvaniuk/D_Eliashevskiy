@@ -9,11 +9,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
     <link rel="manifest" href="./src/favicon/site.webmanifest">
-
     <link rel="stylesheet" href="./style/dist/style.css">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
@@ -25,7 +23,6 @@
                 <span></span>
                 <span></span>
             </div>
-    
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item">
@@ -46,18 +43,15 @@
     </header>
 
     <main class="main" id="main">
-
         <section class="hero">
             <div class="heading">
                 <span class="heading__pref">The</span>
                 <h1 class="heading__name">Daniel Eliashevsky</h1>
                 <span class="heading__descr">Photo and video creator</span>
-    
                 <div class="button_wrapper">
                     <a href=".contact-form" class="header_button scrollBtn">Contact me</a>
                 </div>
             </div>
-    
             <div class="scroll">
                 <a href="#about">
                     <i class="fas fa-chevron-down scroll__icon animate__fadeOutDown"></i>
@@ -134,7 +128,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slider -->
                 <div class="splide" id="slider">
                     <div class="splide__close" id="slider__close"><i class="splide__close_icon fas fa-times"></i></div>
                     <div class="splide__track">
@@ -162,7 +155,6 @@
                 </div>
                 <div class="contact__form">
                     <form class="form" id="contact-form" method="POST" action="https://app.form2chat.io/f/2f2f414">
-                        
                         <div class="form__name">
                             <input type="text" class="form__name_input " placeholder="Your Name" name="userName" id="formName" required />
                             <label for="formName" class="form__name_label">Your Name</label> 
@@ -188,18 +180,12 @@
                     
                 </div>
                 <div class="contact__map" id="map"></div>
-
             </div>
         </section>
-
-
-
     </main>
+
     <footer class="footer">
         <div class="wrapper footer__container">
-            <div class="footer__copyright">
-                <span>&copy; Maksym Ivaniuk 2020</span>
-            </div>
             <div class="footer__socials">
                 <div class="footer__socials_item">
                     <a href="#" class="item_link">
@@ -222,8 +208,13 @@
                     </a>
                 </div>
             </div>
+
+            <div class="footer__copyright">
+                <span>&copy; Maksym Ivaniuk 2020</span>
+            </div>
         </div>
     </footer>
+
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlU0wtxYqNXdJ_OSvcn87hGjRp8khfAJc&callback=initMap"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
@@ -233,7 +224,5 @@
     <script src="./js/form.js"></script>
     <script src="./js/g-maps.js"></script>
     <script src="./js/main.js"></script>
-    
-	
 </body>
 </html>
