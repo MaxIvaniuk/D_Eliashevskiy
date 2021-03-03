@@ -34,16 +34,6 @@ $('nav a').click(function(event) {
     event.preventDefault();
 });
 
-$('.scrollBtn').click(function(event){
-    let id = $(this).attr("href");
-    let offset = 10;
-    let target = $(id).offset().top - offset;
-    console.log(target);
-    $('html, body').animate({
-        scrollTop: target
-    }, 500);
-    event.preventDefault();
-});
 // Tilt effect
 $('.portfolio__container_item').tilt({
     scale: 1.1,

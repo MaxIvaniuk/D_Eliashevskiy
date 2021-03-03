@@ -1,7 +1,19 @@
 // Media Query trigger
 @mixin small {
-    @media only screen and (max-width: 766px) {
+    @media only screen and (max-width: 768px) {
       @content;
+    }
+}
+
+@mixin tablets {
+    @media only screen and (max-width: 481px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: 320px) {
+        @content;
     }
 }
 
