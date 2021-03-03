@@ -3,6 +3,9 @@
 var closeBtn = document.querySelector('#slider__close');
 var bodyTag = document.querySelector('body');
 var header = document.querySelector('.header');
+var sliderWindow = document.querySelector('#slider');
+var sliderContainer = document.querySelector('#slider_list');
+var sliderItem;
 var currentArr = [];
 var sliderImages = {
   food: ['food1.jpg', 'food2.jpg', 'food3.jpg', 'food4.jpg'],
@@ -11,7 +14,7 @@ var sliderImages = {
   travel: ['travel1.jpg', 'travel2.jpg', 'travel3.jpg', 'travel4.jpg', 'travel5.jpg', 'travel6.jpg'],
   nature: ['nature1.jpg', 'nature2.jpg', 'nature3.jpg', 'nature4.jpg', 'nature5.jpg', 'nature6.jpg'],
   mountains: ['mount1.jpg', 'mount2.jpg', 'mount3.jpg', 'mount4.jpg', 'mount5.jpg']
-}; // Event delegation
+};
 
 portfolioWrapper.onclick = function (event) {
   var target = event.target;
@@ -53,12 +56,6 @@ portfolioWrapper.onclick = function (event) {
   console.log(target.id);
 };
 
-function showSlider() {
-  sliderWindow.style.display = 'flex';
-  header.style.display = 'none';
-  bodyTag.style.backgroundColor = 'rgba(0,0,0,0.9)';
-}
-
 function sliderInit() {
   new Splide('.splide', {
     type: 'loop',
@@ -70,20 +67,13 @@ function sliderInit() {
     pagination: false,
     trimSpace: false
   }).mount();
-} // Close button
+}
 
-
-closeBtn.onclick = function () {
-  sliderWindow.style.display = 'none';
-  header.style.display = 'block';
-  bodyTag.style.backgroundColor = '#fff';
-  removeSlider();
-  console.log(currentArr);
-};
-
-var sliderWindow = document.querySelector('#slider');
-var sliderContainer = document.querySelector('#slider_list');
-var sliderItem;
+function showSlider() {
+  sliderWindow.style.display = 'flex';
+  header.style.display = 'none';
+  bodyTag.style.backgroundColor = 'rgba(0,0,0,0.9)';
+}
 
 function createSliders(arr) {
   var _iteratorNormalCompletion = true;
@@ -121,6 +111,13 @@ function createSliders(arr) {
 function removeSlider() {
   while (sliderContainer.firstChild) {
     sliderContainer.removeChild(sliderContainer.firstChild);
-  } // sliderWindow.removeChild(sliderPagination);
-
+  }
 }
+
+closeBtn.onclick = function () {
+  sliderWindow.style.display = 'none';
+  header.style.display = 'block';
+  bodyTag.style.backgroundColor = '#fff';
+  removeSlider();
+  console.log(currentArr);
+};

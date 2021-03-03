@@ -4,6 +4,7 @@ const body = document.querySelector('body')
 const form = document.getElementById("contact-form");
 const formButton = document.getElementsByClassName("form__button");
 const gratitude = document.querySelector('#gratitude');
+const formButtonId = document.querySelector("#form-button");
 
 form.onsubmit = function(e) {
   e.preventDefault();
@@ -32,7 +33,12 @@ form.onsubmit = function(e) {
   },4000);
 };
 
-const formButtonId = document.querySelector("#form-button");
+let showGratitude = () => {
+  gratitude.style.display = 'flex';
+  closeGratitude();
+};
+
+let closeGratitude = () => { body.onclick = () => { gratitude.style.display = 'none'; } };
 
 function animateSuccess() {
     formButtonId.classList.remove('animate');
@@ -65,10 +71,3 @@ function animateError() {
         formButton[i].addEventListener('click', animateError, false);
     }
 };
-
-let showGratitude = () => {
-    gratitude.style.display = 'flex';
-    closeGratitude();
-};
-
-let closeGratitude = () => { body.onclick = () => { gratitude.style.display = 'none'; } };

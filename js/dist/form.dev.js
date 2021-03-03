@@ -4,6 +4,7 @@ var body = document.querySelector('body');
 var form = document.getElementById("contact-form");
 var formButton = document.getElementsByClassName("form__button");
 var gratitude = document.querySelector('#gratitude');
+var formButtonId = document.querySelector("#form-button");
 
 form.onsubmit = function (e) {
   e.preventDefault();
@@ -29,7 +30,16 @@ form.onsubmit = function (e) {
   }, 4000);
 };
 
-var formButtonId = document.querySelector("#form-button");
+var showGratitude = function showGratitude() {
+  gratitude.style.display = 'flex';
+  closeGratitude();
+};
+
+var closeGratitude = function closeGratitude() {
+  body.onclick = function () {
+    gratitude.style.display = 'none';
+  };
+};
 
 function animateSuccess() {
   formButtonId.classList.remove('animate');
@@ -64,14 +74,3 @@ function animateError() {
 }
 
 ;
-
-var showGratitude = function showGratitude() {
-  gratitude.style.display = 'flex';
-  closeGratitude();
-};
-
-var closeGratitude = function closeGratitude() {
-  body.onclick = function () {
-    gratitude.style.display = 'none';
-  };
-};
