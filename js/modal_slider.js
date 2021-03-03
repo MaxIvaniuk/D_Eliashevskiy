@@ -1,8 +1,8 @@
 "use strict"
 
-let closeBtn = document.querySelector('#slider__close'); 
-let bodyTag = document.querySelector('body');
-let header = document.querySelector('.header');
+const closeBtn = document.querySelector('#slider__close'); 
+const bodyTag = document.querySelector('body');
+const header = document.querySelector('.header');
 
 let currentArr = [];
 
@@ -84,8 +84,8 @@ closeBtn.onclick = () => {
     console.log(currentArr);
 };
 
-let sliderWindow = document.querySelector('#slider'); 
-let sliderContainer = document.querySelector('#slider_list');
+const sliderWindow = document.querySelector('#slider'); 
+const sliderContainer = document.querySelector('#slider_list');
 let sliderItem;
 
 function createSliders(arr) {

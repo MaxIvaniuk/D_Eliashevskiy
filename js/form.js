@@ -4,11 +4,9 @@ const body = document.querySelector('body')
 const form = document.getElementById("contact-form");
 const formButton = document.getElementsByClassName("form__button");
 const gratitude = document.querySelector('#gratitude');
-console.log(gratitude.style);
 
 form.onsubmit = function(e) {
   e.preventDefault();
-
   let formData = new FormData(form);
   let xhr = new XMLHttpRequest();
 
@@ -18,7 +16,10 @@ form.onsubmit = function(e) {
 
     if (xhr.status === 200) {
       animateSuccess();
-      showGratitude();
+      setTimeout(function(){
+        showGratitude();
+      },4000);
+      
     } else {
       animateError();
       alert('Something went wrong please try again');
@@ -26,7 +27,9 @@ form.onsubmit = function(e) {
   };
 
   xhr.send(formData);
-  form.reset();
+  setTimeout(function(){
+    form.reset();
+  },4000);
 };
 
 const formButtonId = document.querySelector("#form-button");
@@ -40,7 +43,7 @@ function animateSuccess() {
     formButtonId.classList.add('animate');
     setTimeout(function(){
       formButtonId.classList.remove('animate');
-    },6000);
+    },4000);
 };
 
 for (let i = 0; i < formButton.length; i++) {

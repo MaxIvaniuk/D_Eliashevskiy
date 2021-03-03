@@ -24,6 +24,14 @@ body {
   width: 80%;
   max-width: 1170px;
   margin: 0 auto;
+
+  @include small {
+    width: 90%;
+  }
+
+  @include tablets {
+    width: 95%;
+  }
 }
 
 .custom-map-control-button {
@@ -180,11 +188,15 @@ body {
   }
   
   .row {
-    width: 100%;
-    max-width: 940px;
+    width: 80%;
+    // max-width: 940px;
     margin: 0 auto;
     position: relative;
     padding: 0 2%;
+
+    @include small {
+      width: 90%;
+    }
   }
 
   .hero {
@@ -311,6 +323,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
+
+    @include tablets {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 50px;
+    }
   }
 
   &__descr {
@@ -380,21 +400,31 @@ body {
 
   &__image {
     position: relative;
-    height: 470px;
+    height: 28.750em;
     width: 35%;
     background: url(../../src/img/s_about_img.jpg);
     background-size: contain;
     background-repeat: no-repeat;
+
+    @include tablets {
+      width: 100%;
+      margin: 0 auto;
+      background-size: cover;
+    }
 
     &::before {
       position: absolute;
       content: '';
       top: 20%;
       left: -50%;
-      height: inherit;
+      height: 28.750em;
       width: 100%;
       border: 3px solid #ccc;
       z-index: -5;
+
+      @include tablets {
+        display: none;
+      }
     }
   }
 }
@@ -415,9 +445,24 @@ body {
     justify-items: stretch;
     align-items: stretch;
 
+    @include small {
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @include tablets {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;  
+      grid-gap: 10px;
+    }
+
     &_header {
       @include PlayfairDisplay;
       grid-row: 1 / 3;
+
+      @include tablets {
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+      }
 
       .portfolio__header {
         font-size: 40px;
@@ -471,7 +516,6 @@ body {
         z-index: 10;
 
         .item__description {
-          
           color: #fff;
           opacity: 1;
           background-color: rgba(204, 204, 204, 0.5);
@@ -482,31 +526,90 @@ body {
       &:nth-child(2) {
         grid-row: 1 / 5;
         background-image: url(../../src/img/port_item1.jpg);
+
+        @include small {
+          grid-row: 1 / 4;
+        }
+
+        @include tablets {
+          grid-row: 1 / 4;
+          grid-column: 2 / 3;
+        }
       }
       
       &:nth-child(3){
         grid-row: 3 / 7;
-        background-image: url(../../src/img/portfolio_item2.jpg)
+        background-image: url(../../src/img/portfolio_item2.jpg);
+
+        @include small {
+          grid-row: 3 / 5;
+        }
+
+        @include tablets {
+          grid-row: 3 / 4;
+          grid-column: 1 / 2;
+          
+        }
       }
 
       &:nth-child(4) {
         grid-row: 2 / 6;
-        background-image: url(../../src/img/portfolio_item5.jpg)      
+        background-image: url(../../src/img/portfolio_item5.jpg);   
+        
+        @include small {
+          grid-row: 2 / 5;
+        }
+
+        @include tablets {
+          grid-row: 4 / 5;
+          grid-column: 2 / 3;
+          
+        }
       }
 
       &:nth-child(5) {
         grid-row: 5 / 9;
-        background-image: url(../../src/img/portfolio_item4.jpg)      
+        background-image: url(../../src/img/portfolio_item4.jpg);
+
+        @include small {
+          grid-row: 4 / 7;
+        }
+        
+        @include tablets {
+          grid-row: 4 / 6;
+          grid-column: 1 / 2;
+          
+        }
       }
       
       &:nth-child(6) {
         grid-row: 6 / 10;
-        background-image: url(../../src/img/portfolio_item3.jpg)      
+        background-image: url(../../src/img/portfolio_item3.jpg);     
+
+        @include small {
+          grid-row: 5 / 10;
+        }
+
+        @include tablets {
+          grid-row: 5 / 7;
+          grid-column: 2 / 3;
+          
+        }
       }
 
       &:last-child {
         grid-row: 7 / 11;
-        background-image: url(../../src/img/portfolio_item6.jpg)      
+        background-image: url(../../src/img/portfolio_item6.jpg);   
+        
+        @include small {
+          grid-row: 5 / 8;
+        }
+
+        @include tablets {
+          grid-row: 6 / 7;
+          grid-column: 1 / 2;
+          
+        }
       }
     }
   }
@@ -573,8 +676,8 @@ body {
 
 // CONTACT section
 .contact {
-  margin-top: 160px;
-  margin-bottom: 160px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 
   &__container {
     display: grid;
@@ -585,10 +688,22 @@ body {
     justify-items: stretch;
     align-items: stretch;
 
+    @include small {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
   }
   &__heading {
     @include PlayfairDisplay;
     grid-column: 1/2;
+
+    @include small {
+      width: 80%;
+      text-align: left;
+      margin: 0 auto;
+    }
 
     &_header {
       font-size: 40px;
@@ -605,6 +720,12 @@ body {
     @include Montserrat;
     $gray: #9b9b9b;
     grid-column: 2/4;
+
+    @include small {
+      width: 80%;
+      // text-align: left;
+      margin: 0 auto;
+    }
 
     .form {
       position: relative;
@@ -816,6 +937,7 @@ body {
         text-transform: uppercase;
         text-align: center;
         font-size: 1.2em;
+        font-weight: 300;
         padding: 15px 40px;
         border-radius: 50px;
         cursor: pointer;
@@ -826,7 +948,7 @@ body {
 
         
         &:focus{
-          outline: 0;
+          outline: 2px;
         }
         
         &.animate{
@@ -849,13 +971,13 @@ body {
             top: 50%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            animation: spin ease-in 2.5s forwards;
+            animation: spin ease-in 2s forwards;
             animation-name: spin;
             -webkit-animation-name: spin; 
             transition-timing-function:ease-in-out;
             -webkit-transition-timing-function: ease-in-out;
-            animation-duration: 2.5s;
-            -webkit-animation-duration: 2.5s;
+            animation-duration: 2s;
+            -webkit-animation-duration: 2s;
             animation-fill-mode: forwards;
             -webkit-animation-fill-mode: forwards;
           }
@@ -874,7 +996,7 @@ body {
             transform: translate(-50%, -50%) rotate(0deg) scale(0);
             -webkit-animation: success ease-in 0.15s forwards;
             animation: success ease-in 0.15s forwards;
-            animation-delay: 2.5s;
+            animation-delay: 2s;
           }
           
           &.error{
@@ -897,7 +1019,7 @@ body {
               transform: translate(-50%, -50%) scale(0);
               -webkit-animation: error ease-in 0.5s forwards;
               animation: error ease-in 0.5s forwards;
-              animation-delay: 2.5s;
+              animation-delay: 2s;
             }
           }
         }
@@ -1065,4 +1187,3 @@ body {
       transform: translateY(20px);
     }
   }
-
