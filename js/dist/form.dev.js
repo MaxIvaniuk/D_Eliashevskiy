@@ -62,7 +62,6 @@ function animateError() {
   formButtonId.classList.remove('animate');
   formButtonId.classList.add('animate');
   formButtonId.classList.add('error');
-  formButtonId.classList.add('animate');
   setTimeout(function () {
     formButtonId.classList.remove('animate');
   }, 6000);

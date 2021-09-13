@@ -233,7 +233,7 @@ body {
   padding-top: 110px;
   height: 100vh;
   min-height: 700px;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(51, 51, 51, 0.7) 100%), url(../../src/img/main_bg.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(51, 51, 51, 0.7) 100%), url(../../src/img/main_bg.webp);
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -459,7 +459,7 @@ body {
   position: relative;
   height: 28.75em;
   width: 35%;
-  background: url(../../src/img/s_about_img.jpg);
+  background: url(../../src/img/s_about_img.webp);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -571,7 +571,7 @@ body {
 }
 .portfolio__container_item:nth-child(2) {
   grid-row: 1/5;
-  background-image: url(../../src/img/port_item1.jpg);
+  background-image: url(../../src/img/port_item1.webp);
 }
 @media only screen and (max-width: 768px) {
   .portfolio__container_item:nth-child(2) {
@@ -586,7 +586,7 @@ body {
 }
 .portfolio__container_item:nth-child(3) {
   grid-row: 3/7;
-  background-image: url(../../src/img/portfolio_item2.jpg);
+  background-image: url(../../src/img/portfolio_item2.webp);
 }
 @media only screen and (max-width: 768px) {
   .portfolio__container_item:nth-child(3) {
@@ -601,7 +601,7 @@ body {
 }
 .portfolio__container_item:nth-child(4) {
   grid-row: 2/6;
-  background-image: url(../../src/img/portfolio_item5.jpg);
+  background-image: url(../../src/img/portfolio_item5.webp);
 }
 @media only screen and (max-width: 768px) {
   .portfolio__container_item:nth-child(4) {
@@ -616,7 +616,7 @@ body {
 }
 .portfolio__container_item:nth-child(5) {
   grid-row: 5/9;
-  background-image: url(../../src/img/portfolio_item4.jpg);
+  background-image: url(../../src/img/portfolio_item4.webp);
 }
 @media only screen and (max-width: 768px) {
   .portfolio__container_item:nth-child(5) {
@@ -631,7 +631,7 @@ body {
 }
 .portfolio__container_item:nth-child(6) {
   grid-row: 6/10;
-  background-image: url(../../src/img/portfolio_item3.jpg);
+  background-image: url(../../src/img/portfolio_item3.webp);
 }
 @media only screen and (max-width: 768px) {
   .portfolio__container_item:nth-child(6) {
@@ -646,7 +646,7 @@ body {
 }
 .portfolio__container_item:last-child {
   grid-row: 7/11;
-  background-image: url(../../src/img/portfolio_item6.jpg);
+  background-image: url(../../src/img/portfolio_item6.webp);
 }
 @media only screen and (max-width: 768px) {
   .portfolio__container_item:last-child {
@@ -1112,7 +1112,7 @@ body {
   height: 30%;
   background-color: rgba(104, 104, 104, 0.5);
   border-radius: 20px;
-  background-image: url(../../src/img/modal-w.jpg);
+  background-image: url(../../src/img/modal-w.webp);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
